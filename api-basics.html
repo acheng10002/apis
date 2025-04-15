@@ -1,0 +1,53 @@
+<!-- API Basics
+- API - set of rules and protocols that allows apps to communicate with 
+each other
+- Jamstack architecture technique - host backend and database on a server
+(Heroku or Digital Ocean) and use a service (hosted platform or cloud 
+provider) to host the front end 
+- Jamstack allows me to use a single backend source for multiple frontend
+apps, such as a website, a desktop app, or a mobile app 
+- frontend and backend apps usually talk to each other using JSON 
+- I now need to get my Express app to speak JSON instead of HTML 
+-- I mainly need to pass my information into res.json() instead of res.send
+or res.render() 
+- APIs can take many forms: /api/getAllPostComments/:postid or /api/posts/:postid/comments
+- Know what REST stands for
+-- REST - Representational State Transfer, organization method for my APIs
+which correspond with CRUD actions 
+-- elements of REST - statelessness, cacheability i.e. use Express to output JSON
+-- how should I organize my endpoint URIs (Uniform Resource Identifiers)
+-- REST APIs are resource based
+--- so instead of having names like /getPostComments or /savePostInDatabase 
+--- use HTTP verbs such as GET, POST, PUT, and DELETE
+- Explain the purpose of using REST when structuring an API
+-- makes my API more maintainable and makes it easier for other devs to 
+integrate with my API
+- Detail the REST naming conventions for my API endpoints 
+-- API name usually takes the form of 2 URI's per resource, one for the whole
+collection and one for a single object in that collection
+--- /posts - one URI for the whole collection of blog posts
+--- /posts/:postid - second URI for a single object in that collection
+--- (collections can be nested in this way)
+--- /posts/:postid/comments - gets the list of comments on a single post
+--- /posts/:postid/comments/:commentid - gets a single comment
+- Have a reinforced understanding of the HTTP Methods/Verbs
+-- Why are HTTP verbs important to an API
+--- HTTP verbs determine the action
+-- Which HTTP verb does each letter in CRUD correspond to 
+--- POST verb, Create action, ex. POST /posts Creates a new blog post
+--- GET verb, Read action, ex. 	GET /posts/:postid Fetches a single post
+--- PUT verb, Update action, ex. PUT /posts/:postid Updates a single post
+--- DELETE verb, Delete action, ex. DELETE /posts/:postid Deletes a single post
+--- each part of an API URI specifies the resource
+- Describe the Same Origin Policy
+-- security measure that says "only requests from the same origin (same IP
+address or URL) should be allowed to access this API"
+- Explain the purpose of CORS
+-- CORS - cross-origin resource sharing enables my API to be accessed from 
+different origins
+-- Setting up CORS in Express, a middleware does the work for me
+-- a production environmentm, I will want to specifically block access from 
+any origin except my frontend website
+- Use CORS as middleware in Express (globally and on a single route) 
+- Configure CORS to only allow certain origins to access my API
+- Explain CORS headers -->
